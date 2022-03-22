@@ -5,6 +5,8 @@ import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 
 //  STATELESS COMPONENT (Presentational/dumb)
+// doesn't have any internal state
+// it's just here to present some data
 
 const ExpenseItem = (props) => {
   return (

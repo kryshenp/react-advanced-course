@@ -6,6 +6,9 @@ import ExpensesFilter from "./ExpensesFilter";
 
 import "./Expenses.css";
 
+// STATEFUL component, manages state and this state is spread out and distributed through PROPS
+// here we manage the filter state and then we pass the  selectedYear though props back to ExpenseFilter component
+
 const Expenses = (props) => {
   const [selectedYear, setSelectedYear] = useState("2020");
   const yearChangeDataHandler = (selectedYear) => {
