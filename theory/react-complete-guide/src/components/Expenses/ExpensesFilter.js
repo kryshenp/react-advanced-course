@@ -15,7 +15,7 @@ const ExpensesFilter = (props) => {
 
   return (
     <div className="expenses-filter">
-      <div className="expenses-gilter__control">
+      <div className="expenses-f ilter__control">
         <label>Filter by Year</label>
         <select value={props.selected} onChange={yearChangeHandler}>
           {yearsList}

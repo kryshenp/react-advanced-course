@@ -7,6 +7,8 @@ const ExpenseForm = (props) => {
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
 
+  // ONE STATE INSTEAD OF THREE STATES APPROACH
+  // call useState only once and pass in an Object as a value
   // const [userInput, setUserInput] = useState({
   //   enteredTitle: "",
   //   enteredAmount: "",
@@ -21,6 +23,9 @@ const ExpenseForm = (props) => {
     //   enteredTitle: event.target.value,
     // });
 
+    // WE UPDATE STATE AND DEPEND ON THE PREVIOUS STATE
+    // SO THIS APPROACH IS BETTER
+    // it receives the previous state snapshot for that state for which we're calling the updating function
     // setUserInput((prevState) => {
     //   return {
     //     ...prevState,
@@ -86,7 +91,7 @@ const ExpenseForm = (props) => {
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
-          <input type="number" min="0.01" step="0.01" onChange={amountChangeHandler} value={enteredAmount} />
+          <input type="number" min="0.01" step="0.01" onChange={amountChangeHandler} value={enteredAmount} placeholder="$" />
         </div>
         <div className="new-expense__control">
           <label>Date</label>
