@@ -6,6 +6,7 @@ import "./Chart.css";
 // functional component
 const Chart = (props) => {
   const dataPointvalues = props.dataPoints.map((dataPoint) => dataPoint.value);
+  // ...dataPointvalues => spread operator to pull out all the array elements and add them as standalone arguments to max() method
   const totalMaximum = Math.max(...dataPointvalues);
 
   return (
