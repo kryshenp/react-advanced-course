@@ -1,6 +1,7 @@
 import React from "react";
 
 import UserForm from "./UserForm";
+import "./NewUser.css";
 
 const NewUser = (props) => {
   const saveUserDataHandler = (enteredUserData) => {
