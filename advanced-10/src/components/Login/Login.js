@@ -12,6 +12,14 @@ const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
 
   useEffect(() => {
+    console.log("EFFECT RUNNING");
+
+    return () => {
+      console.log("EFFECT CLEANUP");
+    };
+  }, [enteredPassword]);
+
+  useEffect(() => {
     // <--- both logics from email and password can be included into useEffedt
     const indentifier = setTimeout(() => {
       console.log("Checking form validity");
