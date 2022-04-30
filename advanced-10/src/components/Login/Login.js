@@ -13,7 +13,15 @@ const Login = (props) => {
 
   useEffect(() => {
     // <--- both logics from email and password can be included into useEffedt
-    setFormIsValid(enteredEmail.includes("@") && enteredPassword.trim().length > 6);
+    const indentifier = setTimeout(() => {
+      console.log("Checking form validity");
+      setFormIsValid(enteredEmail.includes("@") && enteredPassword.trim().length > 6);
+    }, 500);
+
+    return () => {
+      clearTimeout(indentifier);
+      console.log("Cleanup"); // this doesn't run before the very first side effect execution
+    }; // so-called cleanup function
   }, [enteredEmail, enteredPassword]);
   // }, [setFormIsValid, enteredEmail, enteredPassword]); // adding a pointer to setFormIsValid so I essentially adding a f-n itself
   // this tells React tha after every Login component f-n execution it will rerun this useEffect function but only
