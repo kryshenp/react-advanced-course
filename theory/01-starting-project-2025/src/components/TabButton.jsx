@@ -1,4 +1,13 @@
-export default function TabButton(props) {
+export default function TabButton({ children, onSelect }) {
+    return (
+        <li>
+            <button onClick={onSelect}>{children}</button>
+        </li>
+    );
+}
+
+/**
+ * export default function TabButton(props) {
     function handleClick() {
         console.log("Hello world!");
     }
@@ -6,15 +15,6 @@ export default function TabButton(props) {
     return (
         <li>
             <button onClick={handleClick}>{props.children}</button>
-        </li>
-    );
-}
-
-/** can also be set using object destructuring
- * export default function TabButton({ children }}) {
-    return (
-        <li>
-            <button>{children}</button>
         </li>
     );
 }
