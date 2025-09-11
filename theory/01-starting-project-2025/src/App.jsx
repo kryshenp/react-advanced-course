@@ -4,8 +4,11 @@ import TabButton from "./components/TabButton.jsx";
 import { CORE_CONCEPTS } from "./data.js";
 
 function App() {
+    // REACT COMPONENT IS EXECUTED ONCE - THEREFORE THIS UPPROACH IS INCORRECT AND WE SHOULD USE STATE
+    let tabContent = "Please click a button";
+
     function handleSelect(selectedButton) {
-        console.log(selectedButton);
+        tabContent = selectedButton;
     }
 
     return (
@@ -50,7 +53,7 @@ function App() {
                             State
                         </TabButton>
                     </menu>
-                    Dynamic Content
+                    {tabContent}
                 </section>
             </main>
         </div>
