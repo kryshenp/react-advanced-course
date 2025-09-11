@@ -4,8 +4,8 @@ import TabButton from "./components/TabButton.jsx";
 import { CORE_CONCEPTS } from "./data.js";
 
 function App() {
-    function handleSelect() {
-        console.log("HANDLE SELECTED!!!!");
+    function handleSelect(selectedButton) {
+        console.log(selectedButton);
     }
 
     return (
@@ -37,12 +37,18 @@ function App() {
                     <h2>Examples</h2>
                     <menu>
                         {/* made with component composition */}
-                        <TabButton onSelect={handleSelect}>
+                        <TabButton onSelect={() => handleSelect("components")}>
                             Components
                         </TabButton>
-                        <TabButton onSelect={handleSelect}>JSX</TabButton>
-                        <TabButton onSelect={handleSelect}>Props</TabButton>
-                        <TabButton onSelect={handleSelect}>State</TabButton>
+                        <TabButton onSelect={() => handleSelect("jsx")}>
+                            JSX
+                        </TabButton>
+                        <TabButton onSelect={() => handleSelect("props")}>
+                            Props
+                        </TabButton>
+                        <TabButton onSelect={() => handleSelect("state")}>
+                            State
+                        </TabButton>
                     </menu>
                     Dynamic Content
                 </section>
