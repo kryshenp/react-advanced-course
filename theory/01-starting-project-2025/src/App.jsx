@@ -1,14 +1,16 @@
+import { useState } from "react";
+
 import CoreConcept from "./components/CoreConcept.jsx";
 import Header from "./components/Header/Header.jsx";
 import TabButton from "./components/TabButton.jsx";
 import { CORE_CONCEPTS } from "./data.js";
 
 function App() {
-    // REACT COMPONENT IS EXECUTED ONCE - THEREFORE THIS UPPROACH IS INCORRECT AND WE SHOULD USE STATE
-    let tabContent = "Please click a button";
+    const [selectedTopic, setSelectedTopic] = useState("Please click a button");
 
     function handleSelect(selectedButton) {
-        tabContent = selectedButton;
+        setSelectedTopic(selectedButton);
+        // console.log(selectedTopic);
     }
 
     return (
@@ -53,7 +55,7 @@ function App() {
                             State
                         </TabButton>
                     </menu>
-                    {tabContent}
+                    {selectedTopic}
                 </section>
             </main>
         </div>
